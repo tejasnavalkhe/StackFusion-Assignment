@@ -1,6 +1,4 @@
-from flask import current_app
 from StackFusion import db
-from datetime import datetime
 import pytz
 
 tz = pytz.timezone("Asia/Calcutta")

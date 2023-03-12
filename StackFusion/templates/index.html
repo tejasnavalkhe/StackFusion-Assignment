@@ -30,17 +30,17 @@
                 <input type="name" class="form-control" id="name" placeholder="Your Name" name="name" required>
             </div>
             <div class="mb-3">
-                <label for="dob" class="form-label">Date Of Birth</label>
-                <input type="date" class="form-control" id="dob" name="dob" onchange="ageCalculator()" required>
-            </div>
-            <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
             </div>
             <div class="mb-3">
                 <label for="phone_number" class="form-label">Phone Number</label>
-                <input type="phone" class="form-control" id="phone_number" name="phone_number"
-                    placeholder="Phone Number" required>
+                <input type="tel" minlength="10" maxlength="10" class="form-control" id="phone_number"
+                    name="phone_number" placeholder="Phone Number" required>
+            </div>
+            <div class="mb-3">
+                <label for="dob" class="form-label">Date Of Birth</label>
+                <input type="date" class="form-control" id="dob" name="dob" onchange="ageCalculator()" required>
             </div>
             <div class="mb-3">
                 <input type="submit" value="Submit" id="submit" class="btn btn-outline-primary">
@@ -79,6 +79,12 @@
                     result = document.getElementById('result');
                     result.innerHTML = 'Only age greater than 18 can submit the form.';
                     result.style.color = 'red';
+                } else {
+                    submit_btn = document.getElementById('submit');
+                    submit_btn.disabled = false;
+                    result = document.getElementById('result');
+                    result.innerHTML = 'Your age is greater than 18, you can submit the form.';
+                    result.style.color = 'green';
                 }
             }
         }
