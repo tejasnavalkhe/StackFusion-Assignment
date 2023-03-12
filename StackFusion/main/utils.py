@@ -5,7 +5,6 @@ from email.message import EmailMessage
 def send_email(email):
     em = EmailMessage()
     em['From'] = Config.MAIL_USERNAME
-    print(Config.MAIL_USERNAME,'\n')
     em['To'] = email
     em['Subject'] = "[Assignment] StackFusion Online Assignment for Full Stack Developer!"
     em.set_content("Congratulations!! You are now registered.")
